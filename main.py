@@ -23,15 +23,10 @@ def load_and_preprocess_data(file_path):
         for line in lines:
             # Split by tab and strip whitespace
             parts = line.strip().split('\t')
-            
-            # Ensure we have both input and response
-            if len(parts) == 2:
-                data.append({
-                    'input': parts[0],
-                    'response': parts[1]
-                })
-            else:
-                print(f"Skipping invalid line: {line}")
+            data.append({
+                'input': parts[0],
+                'response': parts[1]
+            })
 
         # Convert to pandas DataFrame
         df = pd.DataFrame(data)
